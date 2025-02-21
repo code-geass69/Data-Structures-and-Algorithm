@@ -1,4 +1,4 @@
-// Pattern 9:
+// Pattern 10:
 // This or similar based on input size
     //   *
     //   **
@@ -11,27 +11,17 @@
 #include <iostream>
 using namespace std;
 
-void pattern8(int n)
+void pattern10(int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= 2 * n -1; i++)
     {
-        //space
-        for (int j = 0; j < i; j++)
+        int stars = i;
+        if(i > n) stars = 2 * n - i;
+        for (int j = 1; j <= stars; j++)
         {
-            cout << " ";
-        }
-        //star
-        for (int j = 0; j < 2*n-(2*i + 1); j++)
-        {
-            cout << "*";
-        }
-        //space
-        for (int j = 0; j < i; j++)
-        {
-            cout << " ";
+            cout << "* ";
         }
         cout << endl;
-       
     }
 }
 
@@ -41,5 +31,5 @@ int main()
     int n;
     cout << "Enter a number: ";
     cin >> n;
-    pattern8(n);
+    pattern10(n);
 }
